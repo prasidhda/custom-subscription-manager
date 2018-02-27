@@ -11,10 +11,15 @@ include_once CSM_DIR . '/includes/admin/bulk-emails-handler.php';
     .subscribers-lists input{
         height: 40px;
     }
-    .subscribers-lists input[type="email"],
-    .subscribers-lists input[type="text"],
+    .subscribers-lists textarea{
+        min-height: 300px;
+    }
+    .subscribers-lists input,
     .subscribers-lists textarea{
         width: 75%;
+    }
+    .subscribers-lists input[type="submit"]{
+        width: auto; 
     }
 </style>
 <div class="wrap subscribers-lists" >
@@ -29,7 +34,7 @@ include_once CSM_DIR . '/includes/admin/bulk-emails-handler.php';
                 <!-- Email Header Area  -->
                 <tr>
                     <th>
-                         <label for="csm_email_header_from">Email Header From: </label>
+                        <label for="csm_email_header_from"><?php _e( 'Email Header From:', 'custom-subscriptions-manager' ); ?> </label>
                     </th>
                     <td>
                         <input type="text" name="csm_email_header_from" value="<?php echo get_option('csm_email_header_from'); ?>">
@@ -38,7 +43,7 @@ include_once CSM_DIR . '/includes/admin/bulk-emails-handler.php';
                 <!-- Email Subject  -->
                 <tr>
                     <th>
-                         <label for="csm_email_header_subject">Email Header Subject: </label>
+                         <label for="csm_email_header_subject"><?php _e('Email Header Subject:' , 'custom-subscriptions-manager' ); ?> </label>
                     </th>
                     <td>
                         <input type="text" name="csm_email_header_subject" value="<?php echo get_option('csm_email_header_subject'); ?>">
@@ -47,10 +52,10 @@ include_once CSM_DIR . '/includes/admin/bulk-emails-handler.php';
                 <!-- Email Body Content Field Area -->
                 <tr>
                     <th scope="row">
-                        <label for="csm_email_content">Email Body Content</label>
+                        <label for="csm_email_content"><?php _e( 'Email Body Content', 'custom-subscriptions-manager' ); ?></label>
                     </th>
                     <td>
-                        <textarea class="input-text wide-input" name="csm_email_content" style="width: 75%; height: 300px;" ><?php echo get_option( 'csm_email_content' ); ?></textarea>
+                        <textarea class="input-text wide-input" name="csm_email_content" ><?php echo get_option( 'csm_email_content' ); ?></textarea>
                     </td>
                 </tr>
                 <!-- Submit Area -->

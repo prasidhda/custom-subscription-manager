@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 if ( ! function_exists( 'csm_render_subscription_form' ) ) {
 	function csm_render_subscription_form( $attributes ) {
-		include_once CSM_DIR . '/includes/views/html-subscription-form.php';
+		include_once apply_filters( 'csm_subscription_form_dir', CSM_DIR . '/includes/views/html-subscription-form.php' ); ;
 	}
 }
 add_shortcode( 'subscription-form', 'csm_render_subscription_form' );

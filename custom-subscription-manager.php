@@ -17,10 +17,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! defined( 'CSM_DIR' ) ) {
 	define( 'CSM_DIR', dirname( __FILE__ ) );
 }
+if ( ! defined( 'CSM_PLUGIN_FILE' ) ) {
+	define( 'CSM_PLUGIN_FILE', dirname( __FILE__ ) );
+}
+
+
+if( !defined('CSM_BASENAME') ){
+	define('CSM_BASENAME', plugin_basename( CSM_PLUGIN_FILE ) );
+}
+
 
 if ( ! defined( 'CSM_URL' ) ) {
-	define( 'CSM_URL', plugins_url( 'custom-subscriptions-manager' ) );
+	define( 'CSM_URL', plugins_url( CSM_BASENAME) );
 }
+
 
 include_once CSM_DIR . '/includes/shortcodes.php';
 include_once CSM_DIR . '/includes/assets-handler.php';

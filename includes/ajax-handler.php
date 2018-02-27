@@ -43,7 +43,7 @@ if ( ! function_exists( 'csm_email_subscription' ) ) {
 			if ( strpos( $current_subscribers, $email_id ) !== FALSE ) {
 				$response = array(
 					'status'  => 'failed',
-					'message' => 'You are already being subscribed.'
+					'message' => 'You are already subscribed.'
 				);
 				wp_send_json( $response );
 				die();
@@ -53,7 +53,7 @@ if ( ! function_exists( 'csm_email_subscription' ) ) {
 		update_option( 'csm_email_subscribers', $current_subscribers );
 		$response = array(
 			'status'  => 'success',
-			'message' => 'Thank you for the subscription'
+			'message' => 'Thank you for the subscription.'
 		);
 		wp_send_json( $response );
 		die();
